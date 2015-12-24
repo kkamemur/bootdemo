@@ -39,9 +39,9 @@ public class HomeController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String home(ModelMap model) {
-        List<Record> records = repository.findAll();
-        model.addAttribute("records", records);
-        model.addAttribute("insertRecord", new Record());
+//        List<Record> records = repository.findAll();
+//        model.addAttribute("records", records);
+//        model.addAttribute("insertRecord", new Record());
         return "home";
     }
 
@@ -50,7 +50,7 @@ public class HomeController {
                              @ModelAttribute("insertRecord") @Valid Record record,
                              BindingResult result) {
         if (!result.hasErrors()) {
-            repository.save(record);
+//            repository.save(record);
         }
         return home(model);
     }
